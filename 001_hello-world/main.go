@@ -21,6 +21,14 @@ func( sa secretAgent) speak() {
 	fmt.Println(sa.fname, sa.lname, `says, Bond, James Bond`)
 }
 
+type human interface {
+	speak()
+}
+
+func sayingSomething(h human) {
+	h.speak()
+}
+
 func main() {
 	// := is the short declaration operator
 	// DECLARE a vriable and ASSIGN a value of a certain type INT, BOOL, etc.
@@ -61,4 +69,7 @@ func main() {
 		true,
 	}
 	sa1.speak()
+
+	sayingSomething(p1)
+	sayingSomething(sa1)
 }
